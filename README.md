@@ -16,16 +16,11 @@ It also displays or saves plots about its performance. All functionality is opti
 
 - numpy
 - pyyaml
-- evo-1 // Fork from [evo](https://github.com/MichaelGrupp/evo)
+- evo // [evo](https://github.com/MichaelGrupp/evo)
 - open3d-python
 - plotly
 
-> We strongly recommend setting a new virtual environment to avoid conflicts with system-wide installations:
-> ```bash
-> sudo apt-get install virtualenv
-> virtualenv -p python2.7 ./venv
-> source ./venv/bin/activate
-> ```
+> We strongly recommend setting a new virtual environment to avoid conflicts with system-wide installations.
 
 # Installation
 ```bash
@@ -82,6 +77,10 @@ The experiment yaml file specifies the following:
   - `initial/final_frame`: runs the VIO starting on `initial_frame` and finishing on `final_frame`. This is useful for datasets which start/finish by bumping against the ground, which might negatively affect IMU readings.
 
 `./evaluation/main_evaluation.py -r -a --save_plots --save_results --save_boxplots experiments/example_euroc.yaml`
+
+run as
+
+`    py evaluation/main_evaluation.py -r -a -v --save_plots --save_boxplots --save_results  experiments/example_euroc.yaml `
 
 where, as explained below, the `-r` and `-a` flags run the VIO pipeline given in the `executable_path` and analyze its output.
 
