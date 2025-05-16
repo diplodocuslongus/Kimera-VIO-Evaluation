@@ -3,7 +3,8 @@
 from __future__ import print_function
 import glog as log
 import os
-from ruamel import yaml
+# from ruamel import yaml
+from ruamel.yaml import YAML
 from tqdm import tqdm
 
 # Ignore warnings from matplotlib...
@@ -18,7 +19,10 @@ from evaluation.evaluation_lib import DatasetEvaluator, DatasetRunner, aggregate
 
 def run(args):
     # Get experiment information from yaml file.
-    experiment_params = yaml.load(args.experiments_path, Loader=yaml.Loader)
+    # yaml = YAML(typ='rt')
+    yaml_instance = YAML(typ='rt')
+    experiment_params = yaml_instance.load(args.experiments_path)
+    # experiment_params = yaml.load(args.experiments_path, Loader=yaml.Loader)
     # Create dataset evaluator: runs vio depending on given params and analyzes output.
     extra_flagfile_path = ""  # TODO(marcus): parse from experiments
     # TODO(marcus): choose which of the following based on -r -a flags

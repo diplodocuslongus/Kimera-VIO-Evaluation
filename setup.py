@@ -15,7 +15,7 @@ setup(
         "glog",
         "tqdm",
         "ruamel.yaml",
-        "evo-1",
+        "evo",
         "open3d-python",
         "plotly",
         "chart_studio",

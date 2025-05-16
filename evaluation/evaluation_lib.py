@@ -287,7 +287,7 @@ class DatasetEvaluator:
         self.display_plots = args.plot
         self.save_results  = args.save_results
         self.save_plots    = args.save_plots
-        self.write_website = args.write_website
+        self.write_website = False #args.write_website
         self.save_boxplots = args.save_boxplots
         self.run_vio       = args.run_pipeline
         self.analyze_vio   = args.analyze_vio
@@ -299,7 +299,7 @@ class DatasetEvaluator:
         self.traj_pgo_csv_name = "traj_pgo.csv"
 
         # Class to write the results to the Jenkins website
-        self.website_builder = evt.WebsiteBuilder(self.results_dir, self.traj_vio_csv_name)
+        # self.website_builder = evt.WebsiteBuilder(self.results_dir, self.traj_vio_csv_name)
 
     def evaluate(self):
         """ Run datasets if necessary, evaluate all. """

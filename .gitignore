@@ -1,3 +1,6 @@
+# vi swap
+*.swp
+
 # ignore notebooks now that jupytext is active
 *.ipynb
 
